@@ -9,10 +9,10 @@ int main()
 	int result;
 	printf("enter the plain text:");
 	scanf("%s",&plain);
-	printf("\n enter the key value:");
+	printf("\nenter the key value:");
 	scanf("%d",&key);
-	printf("\n\n plaintext:%s",plain);
-	printf("\n\n encrypted text:");
+	printf("\n\nplaintext:%s",plain);
+	printf("\n\nencrypted text:");
 	length = strlen(plain);
 	for(i=0;i<length;i++)
 	{
