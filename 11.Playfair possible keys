@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    double factorial = 1.0;
+    for (int i = 1; i <= 25; i++) {
+        factorial *= i;
+    }
+    double log2_factorial = 0.0;
+    for (int i = 1; i <= 25; i++) {
+        log2_factorial += log2(i);
+    }
+    int symmetries = 8;
+    double unique_keys = factorial / symmetries;
+    double log2_unique_keys = log2_factorial - log2(symmetries);
+    printf("Total possible keys (approx. power of 2): 2^%.2f\n", log2_factorial);
+    printf("Effectively unique keys (approx. power of 2): 2^%.2f\n", log2_unique_keys);
+    return 0;
+}
