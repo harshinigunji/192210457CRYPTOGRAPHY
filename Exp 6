@@ -29,7 +29,7 @@ else {
     printf("\n");
 }
 int main() {
-    char ciphertext[] = "BTU...";
+    char ciphertext[] = "BPU...";
     int x1 = 4, y1 = 1; // E -> B
     int x2 = 19, y2 = 20; // T -> U
     int a, b;
