@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main()
+{
+    int i, cnt=0, p8[8]={6,7,8,9,1,2,3,4};
+    int p10[10]={6,7,8,9,10,1,2,3,4,5};
+
+    char input[11], k1[9], temp[11];
+    printf("Enter 10 bits input: ");
+    scanf("%10s", input); 
+    input[10] = '\0';
+
+    for(i=0; i<10; i++)
+    {
+        cnt = p10[i];
+        temp[i] = input[cnt-1];
+    }
+    temp[i] = '\0';
+
+    printf("\nYour p10 key is    :");
+    for(i=0; i<10; i++)
+    { 
+        printf("%d,",p10[i]); 
+    }
+
+    printf("\nBits after p10     : ");
+    puts(temp);
+
+    // Left shift first half
+    char tempFirstHalf[6], tempSecondHalf[6];
+    for(i = 0; i < 5; i++) {
+        tempFirstHalf[i] = temp[(i+1)%5];
+        tempSecondHalf[i] = temp[5 + (i+1)%5];
+    }
+    tempFirstHalf[5] = '\0';
+    tempSecondHalf[5] = '\0';
+
+    // Concatenate both halves
+    for(i = 0; i < 5; i++) {
+        temp[i] = tempFirstHalf[i];
+        temp[i + 5] = tempSecondHalf[i];
+    }
+    temp[10] = '\0';
+
+    printf("Output after LS-1  : ");
+    puts(temp);
+
+    printf("\nYour p8 key is     :");
+    for(i=0; i<8; i++)
+    { 
+        printf("%d,",p8[i]); 
+    }
+    for(i=0; i<8; i++)
+    {
+        cnt = p8[i];
+        k1[i] = temp[cnt-1];
+    }
+    k1[8] = '\0';
+
+    printf("\nYour key k1 is     : ");
+    puts(k1); 
+
+    return 0;
+}
